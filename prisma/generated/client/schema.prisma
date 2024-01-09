@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:dev.sqlite"
+}
+
+model Session {
+  id          String    @id
+  shop        String
+  state       String
+  isOnline    Boolean   @default(false)
+  scope       String?
+  expires     DateTime?
+  accessToken String
+  userId      BigInt?
+}
+
+model Product {
+  id       String @id @default(uuid())
+  name     String
+  imageUrl String
+}
+
+model Personalize {
+  id          String  @id @default(uuid())
+  name        String
+  imageUrl    String
+  personalize Boolean @default(false)
+  template    Boolean @default(false)
+  design      Boolean @default(false)
+}
+
+model User {
+  id        Int     @id @default(autoincrement())
+  checkbox1 Boolean @default(false)
+  checkbox2 Boolean @default(false)
+  checkbox3 Boolean @default(false)
+}
+
+model Credentials {
+ id       Int     @id @default(autoincrement())
+ username String  
+ password String
+}

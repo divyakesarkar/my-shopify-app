@@ -1,0 +1,30 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+name = "Personalize App"
+client_id = "45f0330e50c8c2f1643d410463277fc5"
+application_url = "https://violence-fairly-nominations-sk.trycloudflare.com"
+embedded = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products,write_script_tags,read_products"
+
+[auth]
+redirect_urls = [
+  "https://violence-fairly-nominations-sk.trycloudflare.com/auth/callback",
+  "https://violence-fairly-nominations-sk.trycloudflare.com/auth/shopify/callback",
+  "https://violence-fairly-nominations-sk.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2023-10"
+
+[pos]
+embedded = false
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "designtool678.myshopify.com"
+
+
+
